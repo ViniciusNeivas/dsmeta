@@ -17,6 +17,15 @@ function SalesCard() {
 
     const [sales, setSales] = useState<Sale[]>([])
 
+    const coinFormat = {
+
+        minimunFractionDigits:2,
+        style:'currency',
+        currency: 'BRL',
+
+    };
+
+
     useEffect(() => {
 
 
@@ -80,7 +89,7 @@ function SalesCard() {
                                         <td>{sale.sellerName}</td>
                                         <td className="show992">{sale.visited}</td>
                                         <td className="show992">{sale.deals}</td>
-                                        <td>R$ {sale.amount.toFixed(2)} </td>
+                                        <td>R$ {sale.amount.toLocaleString('pt-br', coinFormat)}</td>
                                         <td>
                                             <div className="dsmeta-red-btn-container">
                                                 <NotificationButton saleId={sale.id} />
