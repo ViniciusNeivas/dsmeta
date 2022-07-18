@@ -89,10 +89,12 @@ function SalesCard() {
                                         <td>{sale.sellerName}</td>
                                         <td className="show992">{sale.visited}</td>
                                         <td className="show992">{sale.deals}</td>
-                                        <td>R$ {sale.amount.toLocaleString('pt-br', coinFormat)}</td>
+                                        <td>{sale.amount.toLocaleString('pt-br', coinFormat)}</td>
                                         <td>
                                             <div className="dsmeta-red-btn-container">
-                                                <NotificationButton saleId={sale.id} />
+                                                <NotificationButton 
+                                                saleId={sale.id}
+                                                name={sale.sellerName}  />
                                             </div>
                                         </td>
                                     </tr>
